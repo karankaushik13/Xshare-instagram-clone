@@ -1,0 +1,1611 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f4f3f3;
+}
+.container{
+    position: relative;
+    width: 360px;
+    height: 630px;
+}
+.loader{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    /* border: 5px solid rgb(248, 247, 247); */
+    border: 5px solid transparent;
+    border-left: 5px solid rgb(28, 102, 214);
+    border-right: 5px solid rgb(28, 102, 214);
+    animation: animate 0.8s linear infinite;
+    user-select: none;
+    z-index: 99999;
+}
+@keyframes animate{
+    0%{
+        transform: rotate(0);
+        width: 50px;
+        height: 50px;
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+.container section{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 580px;
+    background: #fff;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.15);
+    overflow: hidden;
+}
+section.home_section, section.search_section, section.reels_section, section.notifications_section, section.account_section{
+    display: none;
+}
+section.home_section.active, section.search_section.active, section.reels_section.active, section.notifications_section.active, section.account_section.active{
+    display: flex;
+}
+
+/* Common css for all section*/
+i.bi{
+    cursor: pointer;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reels_section, .search_section, .notifications_section, .account_section{
+    position: relative;
+    width: 100%;
+    height: 550px;
+}
+
+
+
+
+
+/* Home section */
+.container .home_section header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    padding: 5px 10px;
+    user-select: none;
+}
+.container .home_section header .logo h4{
+    font-weight: 500;
+    font-size: 20px;
+    margin-right: 3px;
+}
+.container .home_section header .icons{
+    font-size: 20px;
+    margin-right: 5px;
+}
+.container .home_section header .icons i:first-child{
+    margin-right: 10px;
+}
+.container .section .status_div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: auto;
+    height: auto;
+    margin: 5px 1.5px;
+    overflow-x: auto;
+    transition: .3s ease;
+    user-select: none;
+}
+::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+}
+.container .section .status_div .status{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    white-space: pre;
+    min-width: 72px;
+    min-height: 80px;
+    margin-right: 1px;
+    padding: 5px 0;
+    cursor: pointer;
+}
+.container .home_section .status_div .status{
+    min-width: 66px;
+}
+.container .section .status_div .status img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1.5px #eee,
+                0 0 0 4px rgb(143, 235, 143);
+    margin-top:  5px;
+    margin-bottom: 5px;
+}
+.container .section .status_div .status.viewed img{
+    box-shadow: 0 0 0 1.5px #fff,
+                0 0 0 4px #efecec;
+}
+.container .section .status_div .status small{
+    font-size: 0.78em;
+    text-align: center;
+    width: 100%;
+    white-space: pre;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.home_underline{
+    width: 100%;
+    border: 1px solid #f7f6f6;
+}
+.underline{
+    width: 100%;
+    border: 1px solid #f7f6f6;
+    margin-top: -10px;
+}
+.container .home_section .content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 453px;
+    overflow-y: auto;
+}
+.container .home_section .content .data{
+    width: 100%;
+    height: auto;
+    /* max-height: 453px; */
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.container .home_section .content .data:nth-child(1){
+    margin-top: 5px;
+}
+.container .home_section .content .data .profile_div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.container .home_section .content .data .profile_div .profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .home_section .content .data .profile_div .profile img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 8px;
+    margin-left: 2.5px;
+}
+.container .home_section .content .data .profile_div .profile h4{
+    font-weight: 600;
+    /* margin-top: 2.3px; */
+}
+.container .home_section .content .data .profile_div .profile img.verify-icon{
+    width: 14px;
+    height: 14px;
+}
+.container .home_section .content .data .profile_div i{
+    font-size: 20px;
+}
+.container .home_section .content .data .profile_content{
+    position: relative;
+    width: 100%;
+    /* height: 56.1vh; */
+    height: auto;
+}
+.container .home_section .content .data .profile_content .imgBox, 
+.container .home_section .content .data .profile_content .videoBox{
+    width: 99%;
+    /* height: 250px; */
+    height: 300px;
+    margin: 5px 0.5% 0;
+    user-select: none;
+}
+.container .home_section .content .data .profile_content .videoBox{
+    height: 340px;
+}
+.container .home_section .content .data .profile_content .imgBox img,  
+.container .home_section .content .data .profile_content .videoBox video{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.container .home_section .content .data .profile_content .videoBox i{
+    position: absolute;
+    top: -1px;
+    right: 10px;
+    color: #fff;
+    font-size: 25px;
+}
+.container .home_section .content .data .profile_content .icons{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -2px;
+    user-select: none;
+}
+.container .home_section .content .data .profile_content .icons .left-icons, 
+.container .home_section .content .data .profile_content .icons .right-icon{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    width: 30%;
+    font-size: 20px;
+    cursor: pointer;
+}
+.container .home_section .content .data .profile_content .icons .left-icons i{
+    margin-right: 8px;
+}
+.container .home_section .content .data .profile_content .icons .left-icons i.bi-heart-fill{
+    color: red;
+}
+.container .home_section .content .data .profile_content .icons .right-icon{
+    width: 10%;
+}
+.container .home_section .content .data .profile_content .messages{
+    width: 100%;
+    padding: 0 5px;
+}
+.container .home_section .content .data .profile_content .messages p{
+    font-size: 14px;
+}
+.container .home_section .content .data .profile_content .messages p.caption{
+    width: 100%;
+    max-height: 48px;
+    padding: 0 22px 0 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+}
+.container .home_section .content .data .profile_content .messages p a.text-mute{
+    text-decoration: none;
+}
+.container .home_section .content .data .profile_content .messages p.time{
+    font-size: 10px;
+}
+.text-mute{
+    color: #545252;
+}
+
+/* User chat section */
+.container .home_section .user_chat{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 99999;
+    display: none;
+}
+.container .home_section .user_chat.active{
+    display: block;
+}
+.container .home_section .user_chat .top-div{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+}
+.container .home_section .user_chat .top-div i{
+    font-size: 20px;
+}
+.container .home_section .user_chat .top-div i.bi-arrow-left{
+    font-size: 20px;
+    margin-right: 10px;
+    user-select: none;
+}
+.container .home_section .user_chat .top-div i.bi-chevron-down{
+    margin-left: 2px;
+    margin-top: 5px;
+    font-size: 16px;
+}
+.container .home_section .user_chat .top-div h4{
+    font-size: 1.1rem;
+    color: #222;
+}
+.container .home_section .user_chat .top-div div{
+    position: absolute;
+    right: 8px;
+    user-select: none;
+}
+.container .home_section .user_chat .top-div div i{
+    padding: 0 3px;
+}
+.container .home_section .user_chat .search_user{
+    position: relative;
+    width: 100%;
+    margin-top: 15px;
+}
+.container .home_section .user_chat .search_user i{
+    position: relative;
+    left: 7%;
+    user-select: none;
+}
+.container .home_section .user_chat .search_user input{
+    width: 80%;
+    border: none;
+    outline: none;
+    padding: 8px 12px 8px 33px;
+    background: #eee;
+    font-size: 16px;
+    letter-spacing: .3px;
+    border-radius: 10px;
+}
+.container .home_section .user_chat .search_user a{
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: rgb(12, 134, 234);
+}
+.container .home_section .user_chat .chat_navigation{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    /* padding: 0 30px; */
+}
+.container .home_section .user_chat .chat_navigation div{
+    text-align: center;
+    margin-right: 1px;
+    width: 33.33%;
+}
+.container .home_section .user_chat .chat_navigation div a{
+    text-decoration: none;
+    color: #000;
+    letter-spacing: .3px;
+    user-select: none;
+    font-size: 14px;
+    text-align: center;
+}
+.container .home_section .user_chat .line{
+    width: 100%;
+    height: 2px;
+    background: rgba(0,0,0,0.1);
+    margin-bottom: 0;
+}
+.container .home_section .user_chat .line .underline{
+    width: 33.33%;
+    height: 3px;
+    background: #444;
+    transition: .3s ease;
+}
+.container .home_section .user_chat .line .underline.l-1{
+    margin-left: 33.33%;
+}
+.container .home_section .user_chat .line .underline.l-2{
+    margin-left: 66.66%;
+}
+.container .home_section .user_chat .user_chat_box{
+    width: 100%;
+    height: 74.4%;
+    margin-top: 1px;
+    /* overflow: hidden; */
+}
+.container .home_section .user_chat .user_chat_box .primary_chat, .container .home_section .user_chat .user_chat_box .general_chat, .container .home_section .user_chat .user_chat_box .chat_request{
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding-top: 10px;
+    display: none;
+}
+.container .home_section .user_chat .user_chat_box .primary_chat.active, .container .home_section .user_chat .user_chat_box .general_chat.active, .container .home_section .user_chat .user_chat_box .chat_request.active{
+    display: block;
+}
+.container .home_section .user_chat .user_chat_box .general_chat div{
+    flex-direction: column;
+    margin-top: 20px;
+}
+.container .home_section .user_chat .user_chat_box .general_chat div div{
+    width: 50px;
+    height: 50px;
+    border: 2px solid #222;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.container .home_section .user_chat .user_chat_box .general_chat div div i{
+    font-size: 30px;
+}
+.container .home_section .user_chat .user_chat_box .general_chat div p{
+    text-align: center;
+    opacity: .8;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    width: 70%;
+}
+.container .home_section .user_chat .user_chat_box .general_chat div a{
+    text-decoration: none;
+    color: rgb(7, 101, 218);
+    font-weight: 500;
+}
+.container .home_section .user_chat .user_chat_box .chat_request{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+}
+.container .home_section .user_chat .user_chat_box .chat_request .top{
+    display: flex;
+    padding: 5px 15px;
+}
+.container .home_section .user_chat .user_chat_box .chat_request .top i{
+    font-size: 20px;
+    margin-right: 30px;
+}
+.container .home_section .user_chat .user_chat_box .chat_request .top h4{
+    font-weight: 600;
+}
+.container .home_section .user_chat .user_chat_box .chat_request p{
+    background: #f5f5f5;
+    padding: 0 20px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+.container .home_section .user_chat .user_chat_box .chat_request .button{
+    position: relative;
+    width: 100%;
+    opacity: .8;
+    margin-bottom: 10px;
+}
+.container .home_section .user_chat .user_chat_box .chat_request .button a{
+    text-decoration: none;
+    color: #111;
+    border: 2px solid #ccc;
+    width: 90%;
+    text-align: center;
+    padding: 8px 20px;
+    border-radius: 10px;
+}
+.container .home_section .user_chat .user_chat_box .chat_request .button i{
+    position: absolute;
+    right: 10%;
+}
+.container .home_section .user_chat .user_chat_box .chat_request .hidden_requests{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    padding: 8px 20px;
+}
+.container .home_section .user_chat .user_chat_box .chat_request .hidden_requests .first{
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+.container .home_section .user_chat .user_chat_box .chat_request .hidden_requests .first div{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.container .home_section .user_chat .user_chat_box .chat_request .hidden_requests .first a{
+    text-decoration: none;
+    color: #111;
+}
+.container .home_section .user_chat .user_chat_box .chat_request .hidden_requests .last{
+    opacity: .8;
+}
+.container .home_section .user_chat .user_chat_box .chat_request .bottom_div{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+}
+.container .home_section .user_chat .user_chat_box .chat_request .bottom_div div{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    margin-bottom: 10px;
+}
+.container .home_section .user_chat .user_chat_box .chat_request .bottom_div div i{
+    font-size: 30px;
+}
+.container .home_section .user_chat .user_chat_box .chat_request .bottom_div h4{
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.container .home_section .user_chat .user_chat_box .chat_request .bottom_div p{
+    opacity: .8;
+    background: #fff;
+    margin-bottom: 30px;
+}
+
+
+
+/* Search section */
+.searchBox{
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow-y: auto;
+}
+/* .searchBox .data_collection .data img:hover, .searchBox .data_collection .data .videoBox:hover{
+    border: 5px solid red;
+    transform: scale(2);
+    width: 120px;
+    height: 120px;
+    z-index: 999999;
+} */
+.searchBox .inputBox{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 35px;
+    margin: 10px auto;
+}
+.searchBox .inputBox i{
+    position: absolute;
+    top: 6px;
+    left: 20px;
+}
+.searchBox .inputBox input{
+    width: 94%;
+    height: 100%;
+    padding-left: 36px;
+    padding-right: 15px;
+    outline: none;
+    border: none;
+    background: #eee;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+
+
+/* Reels section */
+.reels_section .reels-container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.reels_section .reels-container .reels_video{
+    position: relative;
+    width: 100%;
+    /* min-height: 100%; */
+    height: 100%;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    user-select: none;
+}
+.reels_section .reels-container .head-part{
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 15px 0;
+    align-items: center;
+    width: 100%;
+    background: transparent;
+    color: #fff;
+    z-index: 99999;
+}
+.reels_section .reels-container .head-part h4{
+    letter-spacing: .5px;
+    font-weight: 600;
+}
+.reels_section .reels-container .head-part i{
+    font-size: 25px;
+}
+.reels_section .reels-container .vid{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 1px 1px 0;
+    scroll-snap-align: start;
+}
+.reels_section .reels-container .vid video{
+    width: 100%;
+    height: 99.9%;
+    /* height: auto; */
+    object-fit: fill;
+}
+.reels_section .reels-container .vid .options{
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: transparent;
+    color: #fff;
+    padding: 5px 10px;
+    z-index: 999999;
+}
+.reels_section .reels-container .vid .options div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.reels_section .reels-container .vid .options div span{
+    font-size: 13px;
+}
+.reels_section .reels-container .vid .options div i{
+    font-size: 26px;
+}
+.reels_section .reels-container .vid .options img, .reels_section .reels-container .vid .profile .row img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+.reels_section .reels-container .vid .options img{
+    border-radius: 10px;
+    border: 4px solid #fff;
+}
+.reels_section .reels-container .vid .like_counter, .reels_section .reels-container .vid .comment_counter, .reels_section .reels-container .send_video, .reels_section .reels-container .vid .share_video, .account_section .setting_tools{
+    position: relative;
+    display: none;
+}
+.reels_section .reels-container .vid .like_counter.active, .reels_section .reels-container .vid .comment_counter.active, .reels_section .reels-container .send_video.active, .reels_section .reels-container .vid .share_video.active, .account_section .setting_tools.active{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    width: 99%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    height: 70%;
+    margin: 0 2px;
+    overflow-y: auto;
+    z-index: 999999;
+}
+.reels_section .reels-container .vid .comment_counter.active{
+    overflow-y: unset;
+}
+.reels_section .reels-container .vid .comment_counter.active .Comment_Box{
+    width: 100%;
+    height: 87.5%;
+    overflow-y: auto;
+}
+section .bi-x-lg{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 10px;
+    user-select: none;
+} 
+.reels_section .reels-container .vid .like_counter h3{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.reels_section .reels-container .vid .like_counter .underline{
+    margin-bottom: 10px;
+    width: 100%;
+    height: 2.5px;
+    background: #eee;
+}
+.reels_section .reels-container .vid .like_counter .search{
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.reels_section .reels-container .vid .like_counter .search i{
+    position: absolute;
+    left: 30px;
+}
+.reels_section .reels-container .vid .like_counter .search input{
+    width: 90%;
+    border: none;
+    outline: none;
+    padding: 8px 12px 8px 35px;
+    background: #eee;
+    border-radius: 10px;
+    font-size: 17px;
+    letter-spacing: .3px;
+}
+.reels_section .reels-container .vid .like_counter .play_count{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 20px;
+}
+.reels_section .reels-container .vid .like_counter .play_count i{
+    font-size: 20px;
+}
+.reels_section .reels-container .vid .like_counter .liked_and_reactions{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px 15px;
+}
+.reels_section .reels-container .vid .like_counter .liked_and_reactions h4{
+    text-transform: uppercase;
+}
+.reels_section .reels-container .vid .like_counter .liked_and_reactions p{
+    color: #333;
+}
+.reels_section .reels-container .vid .like_counter .underline.two{
+    padding: 0 10px;
+    width: 92%;
+    margin-left: 14px;
+    height: 3.1px;
+    background: rgba(0,0,0,0.2);
+}
+
+.container .section .play{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: auto;
+    height: auto;
+    margin: 5px 10px 10px;
+}
+.container .section .play img, .container .section .vid .comment_counter .Box img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.container .section .play .imgDiv{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    background: #fff;
+}
+.container .section .play .imgDiv i{
+    position: absolute;
+    font-size: 50px;
+    margin-top: -10px;
+    margin-right: -10px;
+    color: rgb(7, 111, 223);
+}
+.container .section .play p{
+    position: absolute;
+    top: 0;
+    right: 5px;
+    width: 80%;
+    font-weight: 500;
+    color: #333;
+}
+.container .section .play p a{
+    text-decoration: none;
+    color: rgb(5, 66, 222);
+    font-weight: 600;
+}
+.container .section .play div{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 54%;
+}
+.container .home_section .user_chat .user_chat_box .primary_chat .play div{
+    width: 70%;
+}
+.container .section .play div h4:nth-child(2){
+    color: rgba(0,0,0,0.6);
+    font-weight: 500;
+    font-size: 15px;
+    white-space: pre;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.container .section .play div span{
+    width: 100%;
+    color: rgba(0,0,0,0.6);
+    font-weight: 500;
+    font-size: 13px;
+    white-space: pre;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.container .section .play button{
+    position: absolute;
+    right: 0;
+    border: none;
+    outline: none;
+    background: rgb(6, 128, 204);
+    color: #fff;
+    padding: 6px 25px;
+    letter-spacing: .3px;
+    border-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+.container .section .play i{
+    position: absolute;
+    right: 10px;
+    font-size: 25px;
+    color: #000;
+    user-select: none;
+    opacity: .8;
+}
+
+/* comment section */
+.reels_section .reels-container .vid .comment_counter .Comment_Box{
+    position: relative;
+}
+.reels_section .reels-container .vid .comment_counter .Comment_Box h4{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.reels_section .reels-container .vid .comment_counter .Comment_Box .underline{
+    height: 2.8px;
+    margin-bottom: 20px;
+    background: rgba(0,0,0,0.7);
+}
+.reels_section .reels-container .vid .comment_counter .Comment_Box .Box{
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 15px;
+}
+.reels_section .reels-container .vid .comment_counter .Comment_Box .Box img{
+    margin-left: 5px;
+}
+.reels_section .reels-container .vid .comment_counter .Comment_Box .Box .commentBox{
+    display: flex;
+    flex-direction: column;
+    width: 72%;
+    height: auto;
+}
+.reels_section .reels-container .vid .comment_counter .Comment_Box .Box .commentBox .username{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.reels_section .reels-container .vid .comment_counter .Comment_Box .Box .commentBox .username p{
+    margin-left: 4px;
+    display: fle;
+    justify-content: space-evenly;
+    width: 38%;
+}
+.reels_section .reels-container .vid .comment_counter .Comment_Box .Box .commentBox .username p a{
+    text-decoration: none;
+    color: rgb(9, 154, 244);
+    font-weight: 600;
+}
+.reels_section .reels-container .vid .comment_counter .Comment_Box .Box .commentBox p{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 17px;
+}
+.reels_section .reels-container .vid .comment_counter .Comment_Box .Box .commentBox .re_comment{
+    display: flex;
+}
+.reels_section .reels-container .vid .comment_counter .Comment_Box .Box .commentBox .re_comment a{
+    font-size: 13px;
+    text-decoration: none;
+    opacity: .8;
+    color: #333;
+    font-weight: 600;
+}
+.reels_section .reels-container .vid .comment_counter .Comment_Box .Box .commentBox .re_comment a:nth-child(2){
+    margin-left: 15px;
+}
+.reels_section .reels-container .vid .comment_counter .Comment_Box .Box .comment_like{
+    flex-direction: column;
+    margin-right: 10px;
+    opacity: .8;
+}
+.reels_section .reels-container .vid .comment_counter .Comment_Box .Box .comment_like i{
+    font-size: 20px;
+}
+.reels_section .reels-container .vid .comment_counter .Comment_Box .Box .comment_like p{
+    margin-top: -4px;
+}
+.reels_section .reels-container .vid .comment_counter .Comment_Box .underline.outside{
+    background: rgba(0,0,0,0.1);
+    height: 2px;
+}
+.reels_section .reels-container .vid .comment_counter .Box.absolute{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f9f8f8;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.reels_section .reels-container .vid .comment_counter .Box.absolute i{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 30px;
+}
+.reels_section .reels-container .vid .comment_counter .Box.absolute input{
+    margin-left: -5px;
+    width: 72%;
+    border: none;
+    outline: none;
+    padding: 10px 5px;
+    font-size: 16px;
+    letter-spacing: 0;
+    border-radius: 10px;
+}
+.reels_section .reels-container .vid .comment_counter .Box.absolute a{
+    text-decoration: none;
+    color: rgb(9, 115, 236);
+    margin: 3px;
+    margin-right: 5px;
+    padding: 7px 0;
+}
+
+.reels_section .reels-container .vid .profile{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 85%;
+    height: auto;
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    background: transparent;    
+}
+.reels_section .reels-container .vid .profile .row{
+    display: flex;
+    align-items: center;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.reels_section .reels-container .vid .profile .row h4{
+    font-weight: 500;
+    margin: 0 10px;
+}
+.reels_section .reels-container .vid .profile .row button{
+    border: none;
+    outline: none;
+    background: transparent;
+    border: 1px solid #fff;
+    padding: 4px 15px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: .3s ease;
+}
+.reels_section .reels-container .vid .profile .row button:active{
+    transform: scale(0.9);
+}
+.reels_section .reels-container .vid .profile .row p{
+    font-size: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+}
+.reels_section .reels-container .vid .profile .row2 p{
+    max-height: 42px;
+}
+.reels_section .reels-container .vid .profile .row p.audio{
+    -webkit-line-clamp: 1;
+    font-size: 12px;
+}
+
+
+/* Send video section */
+.reels_section .reels-container .send_video input{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 8px 12px;
+    font-size: 18px;
+}
+.reels_section .reels-container .send_video .input{
+    margin-top: 10px;
+}
+.reels_section .reels-container .send_video .search_div{
+    position: relative;
+    margin-top: 10px;
+}
+.reels_section .reels-container .send_video .search_div i{
+    position: absolute;
+    font-size: 20px;
+}
+.reels_section .reels-container .send_video .search_div i:nth-child(1){
+    left: 25px;
+}
+.reels_section .reels-container .send_video .search_div i:nth-child(2){
+    right: 25px;
+}
+.reels_section .reels-container .send_video .search_div input{
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+    background: #eee;
+    width: 92%;
+    border-radius: 15px;
+}
+.reels_section .reels-container .send_video .userDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+.reels_section .reels-container .send_video .userDiv img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.reels_section .reels-container .send_video .userDiv a{
+    width: 75%;
+    text-decoration: none;
+    color: #111;
+}
+.reels_section .reels-container .send_video .userDiv i{
+    margin-right: 10px;
+}
+
+
+/* Share video section */
+.reels_section .reels-container .vid .share_video.active{
+    height: 40%;
+}
+.reels_section .reels-container .vid .share_video .icons{
+    margin-top: 30px;
+    justify-content: space-evenly;
+}
+.reels_section .reels-container .vid .share_video .icons div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.reels_section .reels-container .vid .share_video .icons div i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    padding: 10px 15px;
+    border-radius: 50%;
+    border: 1.8px solid #aaa;
+    margin-bottom: 5px;
+}
+.reels_section .reels-container .vid .share_video .icons div small{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80px;
+    text-align: center;
+}
+.reels_section .reels-container .vid .share_video .underline{
+    height: 3px;
+    background: #ccc;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.reels_section .reels-container .vid .share_video .i-interested, .reels_section .reels-container .vid .share_video .report{
+    width: 100%;
+}
+.reels_section .reels-container .vid .share_video .n-interested i, .reels_section .reels-container .vid .share_video .report i{
+    margin-right: 5px;
+    margin-left: 10px;
+    font-size: 20px;
+}
+.reels_section .reels-container .vid .share_video .n-interested a, .reels_section .reels-container .vid .share_video .report a{
+    text-decoration: none;
+    color: #000;
+}
+.reels_section .reels-container .vid .share_video .report{
+    margin-top: 10px;
+}
+.reels_section .reels-container .vid .share_video .report i, .reels_section .reels-container .vid .share_video .report a{
+    color: red;
+}
+
+
+
+
+/* Notifications section */
+.container .notifications_section .notifyBox{
+    position: relative;
+    width: 100%;
+    height: 580px;
+}
+.container .notifications_section .boxContent{
+    position: relative;
+    width: 100%;
+    height: 99.4%;
+    overflow-y: auto;
+    margin: 2px 0 0 0;
+}
+.container .notifications_section .boxContent h3, 
+.container .notifications_section .boxContent label{
+    margin: 5px 5px 0 10px;
+}
+.container .notifications_section .boxContent div{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+.container .notifications_section .boxContent div img, .container .notifications_section .boxContent div i{
+    width: 13%;
+    height: 47px;
+    margin-left: 5px;
+    border-radius: 50%;
+}
+.container .notifications_section .boxContent div i{
+    width: 40px;
+    height: 40px;
+    font-size: 1.6rem;
+    padding: 10px;
+    color: rgb(244, 23, 23);
+    border: 2px solid rgb(225, 59, 59);
+}
+.container .notifications_section .boxContent div img.img1{
+    width: 10%;
+    height: 34px;
+    margin-right: 10px;
+}
+.container .notifications_section .boxContent div img.img2{
+    width: 12%;
+    position: absolute;
+    transform: translate(7px, 7px);
+    border: 2px solid #fff;
+}
+.container .notifications_section .boxContent div img.pic{
+    position: absolute;
+    top: 0;
+    right: 5px;
+    width: 13.5%;
+    height: 46px;
+    border-radius: 0;
+    margin-right: 5px;
+}
+.container .notifications_section .boxContent div .st-img{
+    box-shadow: 0 0 0 2px #fff,
+                0 0 0 4px rgb(60, 151, 248);
+    margin-top: 6px;
+    margin-left: 10px;
+}
+.container .notifications_section .boxContent div .st-img.viewed{
+    box-shadow: 0 0 0 2px #fff,
+                0 0 0 4px rgba(185, 189, 193,1);
+}
+.container .notifications_section .boxContent div p{
+    width: 60%;
+    margin: 0 5px 0 10px;
+    font-size: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+}
+.container .notifications_section .boxContent div p span{
+    color: #000;
+}
+.container .notifications_section .boxContent div p a{
+    text-decoration: none;
+    color: rgb(8, 132, 220);
+    font-weight: 500;
+}
+.container .notifications_section .boxContent div p.label{
+    width: 90%;
+}
+.container .notifications_section .boxContent div button{
+    width: 25%;
+    margin-right: 5px;
+    border: none;
+    outline: none;
+    background: rgb(27, 149, 237);
+    color: #fff;
+    padding: 6px 15px;
+    border-radius: 10px;
+}
+
+
+
+
+/* Account section */
+.account_section .account_div{
+    position: relative;
+    width: 100%;
+}
+.account_section .account_div .acc_top_part{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    margin-bottom: 5px;
+    user-select: none;
+}
+.account_section .account_div .acc_top_part .left_part{
+    padding-left: 10px;
+}
+.account_section .account_div .acc_top_part .left_part h4{
+    font-size: 1.2em;
+    margin-right: 3px;
+}
+.account_section .account_div .acc_top_part .left_part img{
+    width: 15px;
+    height: 15px;
+    margin-right: 3px;
+}
+.account_section .account_div .acc_top_part .right_part i{
+    font-size: 25px;
+}
+.account_section .account_div .acc_top_part .right_part i:first-child{
+    margin-right: 8px;
+    font-size: 20px;
+}
+.account_section .setting_tools.active{
+    background: #fafafa;
+    border-top: 1px solid #ddd;
+    height: 47.5%;
+    padding: 10px 10px;
+    box-shadow: 0 -5px 10px #fafafa;
+}
+.account_section .setting_tools div{
+    width: fit-content;
+    padding-right: 20px;
+    height: 35px;
+    margin: 1px;
+    display: flex;
+}
+.account_section .setting_tools div i{
+    font-size: 1.5rem;
+    margin-right: 10px;
+    user-select: none;
+}
+.account_section .setting_tools div a{
+    text-decoration: none;
+    color: #111;
+}
+.account_section .account_div .user_list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.account_section .account_div .user_list .imgBx{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-left: 12px;
+}
+.account_section .account_div .user_list .imgBx img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 50%;
+}
+.account_section .account_div .user_list .data{
+    display: flex;
+    margin-right: 35px;
+}
+.account_section .account_div .user_list .data div{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 15px;
+}
+.account_section .account_div .user_list .data div:last-child{
+    margin-right: 0;
+}
+.account_section .account_div .user_list .data div span:last-child{
+    font-size: 14px;
+}
+.account_section .account_div .user_text{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+}
+.account_section .account_div .user_text h4{
+    font-weight: 600;
+    font-size: 1.1em;
+}
+.account_section .account_div .user_text p{
+    width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+}
+.account_section .account_div .user_text p.summary{
+    max-height: 50px;
+    -webkit-line-clamp: 2;
+    font-size: 15px;
+    font-weight: 400;
+}
+.account_section .account_div .user_text p.link{
+    display: flex;
+    align-items: center;
+    -webkit-line-clamp: 1;
+}
+.account_section .account_div .user_text p.link i{
+    /* transform: translateY(5px) rotate(135deg); */
+    font-size: 20px;
+    color: rgb(58, 179, 219);
+    margin-top: 3px;
+}
+.account_section .account_div .user_text p.link a{
+    color: rgb(58, 179, 219);
+    text-decoration: none;
+    font-size: 14.5px;
+}
+.account_section .account_div .user_text .buttons{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    user-select: none;
+}
+.account_section .account_div .user_text .buttons button{
+    border: none;
+    outline: none;
+    padding: 6px 32px;
+    border-radius: 8px;
+    margin-right: 10px;
+    user-select: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .3 linear;
+}
+.account_section .account_div .user_text .buttons i{
+    padding: 5px 8px;
+    background: #efefef;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .3 linear;
+}
+.account_section .account_div .user_text .buttons button:hover,
+.account_section .account_div .user_text .buttons i:hover{
+    background: #e5e3e3;
+}
+.account_section .account_div .user_data{
+    position: relative;
+    width: 100%;
+    max-height: 301px;
+    overflow-y: auto;
+}
+.account_section .account_div .user_data .discover_people{
+    position: relative;
+    width: 100%;
+    transition: .3s ease;
+}
+.account_section .account_div .user_data .discover_people.hide{
+    display: none;
+}
+.account_section .account_div .user_data .discover_people .text{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px 2px;
+}
+.account_section .account_div .user_data .discover_people .text h4{
+    font-weight: 500;
+    font-size: 0.9em;
+}
+.account_section .account_div .user_data .discover_people .text a{
+    font-size: 0.8em;
+    text-decoration: none;
+    color: rgb(58, 179, 219);
+}
+.account_section .account_div .user_data .discover_people .cardBox{
+    display: flex;
+    width: 99%;
+    height: auto;
+    margin: 0 1.5px;
+    overflow-x: auto;
+}
+.account_section .account_div .user_data .discover_people .cardBox .cardBx {
+    position: relative;
+    flex-direction: column;
+    max-width: 150px;
+    min-height: 150px;
+    margin: 5px 7.5px;
+    padding: 10px 15px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 5px;
+    user-select: none;
+}
+.account_section .account_div .user_data .discover_people .cardBox .cardBx.hide{
+    display: none;
+}
+.account_section .account_div .user_data .discover_people .cardBox .cardBx img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.account_section .account_div .user_data .discover_people .cardBox .cardBx i{
+    position: absolute;
+    top: -3px;
+    right: 1px;
+    font-size: 1.3em;
+}
+.account_section .account_div .user_data .discover_people .cardBox .cardBx h4{
+    font-weight: 500;
+    font-size: 0.9em;
+}
+.account_section .account_div .user_data .discover_people .cardBox .cardBx small{
+    font-size: 11px;
+    color: #aaa;
+}
+.account_section .account_div .user_data .discover_people .cardBox .cardBx button{
+    border: none;
+    outline: none;
+    background: rgb(13, 173, 226);
+    width: 100%;
+    margin: 10px 0 0;
+    border-radius: 5px;
+    padding: 5px 30px;
+    font-size: 13px;
+    color: #eee;
+    cursor: pointer;
+}
+.account_section .account_div .user_data .highlights{
+    margin-top: 8px;
+    /* background: red; */
+}
+.account_section .account_div .user_data .highlights .status_div .status small{
+    font-size: 0.78em;
+}
+.add_new_highlights{
+    width: 100px;
+    height: 70px;
+    /* margin-right: 6px;
+    margin-top: 5px; */
+}
+.add_new_highlights i{
+    padding: 10px 14px;
+    border-radius: 50%;
+    font-size: 22px;
+    color: #555;
+    border: 1.5px solid #aaa;
+}
+.account_section .account_div .user_data .data_collection{
+    width: 100%;
+    height: auto;
+    user-select: none;
+}
+.account_section .account_div .user_data .data_collection .top{
+    display: flex;
+    justify-content: space-evenly;
+}
+.account_section .account_div .user_data .data_collection .top i{
+    width: 10%;
+    margin: 0 1px;
+    padding: 5px 10px;
+    font-size: 20px;
+}
+.account_section .account_div .user_data .data_collection .line{
+    width: 100%;
+    height: 2px;
+    background: #eee;
+}
+.account_section .account_div .user_data .data_collection .line div{
+    width: 50%;
+    height: 2px;
+    background: #555;
+    transition: .3s ease;
+}
+.account_section .account_div .user_data .data_collection .line div.l-50{
+    margin-left: 50%;
+}
+.data_collection .data{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.data_collection .data img, 
+.data_collection .data .videoBox{
+    position: relative;
+    width: 117px;
+    height: 110px;
+    margin: 3px 1.5px -1px;
+    object-fit: fill;
+}
+.data_collection .data .videoBox video{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.data_collection .data .videoBox i{
+    position: absolute;
+    top: -1px;
+    right: 5px;
+    color: #fff;
+}
+
+
+
+/* Footer section for all section */
+footer{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #252525;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    padding: 5px;
+    user-select: none;
+}
+footer i.bi, footer img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .3s ease;
+}
+footer img{
+    width: 50px;
+    height: 50px;
+}
+footer i.bi:hover{
+    background: #333;
+}
